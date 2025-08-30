@@ -10,20 +10,26 @@ Dieses Projekt ist eine browserbasierte Quizanwendung mit einem einfachen Node.j
 - **Datenhaltung:** JSON-Datei (`questions.json`)
 
 ## 🚀 Lokale Ausführung
+Öffnen Sie die Projektseite auf GitHub: https://github.com/GvendaHemel/Quizsystem 
+Klicken Sie auf den grünen Button Code → Download ZIP.(im Github).
+Entpacken Sie das ZIP an einem beliebigen Ort auf Ihrem Rechner.
 
 ### Backend starten
 
-1. Terminal öffnen und in das Verzeichnis `backend` wechseln:
+Öffnen Sie ein Terminal (Windows: Eingabeaufforderung oder PowerShell, Mac/Linux: Terminal).
+Wechseln Sie in das Backend-Verzeichnis:
+
 ```bash
 cd backend
 npm install
 node server.js
 ```
-2. Der Server läuft dann auf: `http://localhost:3000`
+Der Server läuft dann auf: `http://localhost:3000`
 
 ### Frontend starten
 
-1. Öffne die Datei `index.html` im Hauptverzeichnis im Browser.
+Öffnen Sie die Datei index.html im Hauptverzeichnis (Quizsystem) per Doppelklick im Browser.
+Die Anwendung lädt automatisch die Fragen vom lokalen Server.
 
 ## 📬 API-Endpunkte
 
@@ -41,6 +47,6 @@ Diese kannst du im Browser anzeigen lassen oder erweitern.
 
 ## 👤 Autor
 
-**Gvenda Hemel**  
+**Gvenda Hemel**  (Gvantsa Gogrichiani) 
 Projektarbeit im Rahmen des Studiengangs Informatik (IU Internationale Hochschule)
 

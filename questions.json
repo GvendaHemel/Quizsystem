@@ -1,0 +1,33 @@
+[
+  {
+    "question": "Was ist HTML?",
+    "answers": [
+      "Programmiersprache",
+      "Markup-Sprache",
+      "Betriebssystem",
+      "Browser"
+    ],
+    "correct": 1
+  },
+  {
+    "question": "Was macht CSS?",
+    "answers": [
+      "Struktur",
+      "Design",
+      "Interaktivität",
+      "Hosting"
+    ],
+    "correct": 1
+  },
+  {
+    "question": "Was bedeutet CSS?",
+    "answers": [
+      "Creative Style Syntax",
+      "Cascading Style Sheets",
+      "Central Styling Support",
+      "Color Style System"
+    ],
+    "correct": 1,
+    "explanation": "CSS wird verwendet, um Webseiten zu gestalten"
+  },
+ 

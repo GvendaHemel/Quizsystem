@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kooperatives Lern-Quiz</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 2rem;
+      background-color: #f6f6f6;
+    }
+    h1 {
+      font-size: 2rem;
+    }
+    .btn {
+      display: inline-block;
+      margin: 5px;
+      padding: 10px;
+      border: none;
+      background-color: #ddd;
+      cursor: pointer;
+    }
+    .correct {
+      background-color: #4CAF50;
+      color: white;
+    }
+    .wrong {
+      background-color: #f44336;
+      color: white;
+    }
+    .hide {
+      display: none;
+    }
+    #question-container {
+      margin-bottom: 1rem;
+    }
+    form input, form button {
+      display: block;
+      margin: 5px 0;
+      padding: 8px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Kooperatives Lern-Quiz</h1>
+  
+  <div id="question-container">Frage wird geladen...</div>
+  <div id="answer-buttons"></div>
+  <button id="next-btn" class="hide">Nächste Frage</button>
+
+  <hr />
+
+  <h2>Eigene Frage hinzufügen</h2>
+  <form id="add-question-form">
+    <input type="text" name="question" placeholder="Frage" required />
+    <input type="text" name="a" placeholder="Antwort A" required />
+    <input type="text" name="b" placeholder="Antwort B" required />
+    <input type="text" name="c" placeholder="Antwort C" required />
+    <input type="text" name="d" placeholder="Antwort D" required />
+    <input type="number" name="correct" placeholder="Richtig (0–3)" min="0" max="3" required />
+    <input type="text" name="explanation" placeholder="Begründung (optional)" />
+    <button type="submit">Frage hinzufügen</button>
+  </form>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', () => {
     const questionContainer = document.getElementById('question-container');
     const answerButtons = document.getElementById('answer-buttons');
@@ -7,13 +6,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let currentQuestionIndex = 0;
     let questions = [];
+    let score = 0;
+    let total = 0;
 
     function loadQuestions() {
-        fetch('http://localhost:3000/api/questions')
+        fetch('/api/questions')
             .then(response => response.json())
             .then(data => {
                 questions = data;
                 currentQuestionIndex = 0;
+                score = 0;
+                total = 0;
+                updateScoreDisplay();
                 showQuestion();
             })
             .catch(err => {
@@ -48,6 +52,14 @@ document.addEventListener('DOMContentLoaded', () => {
     function selectAnswer(e) {
         const selectedButton = e.target;
         const correct = selectedButton.dataset.correct === "true";
+
+        // Punkte aktualisieren
+        total++;
+        if (correct) {
+            score++;
+        }
+        updateScoreDisplay();
+
         Array.from(answerButtons.children).forEach(button => {
             setStatusClass(button, button.dataset.correct === "true");
         });
@@ -56,6 +68,13 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             nextButton.innerText = 'Neu starten';
             nextButton.classList.remove('hide');
+        }
+    }
+
+    function updateScoreDisplay() {
+        const scoreDiv = document.getElementById("score");
+        if (scoreDiv) {
+            scoreDiv.innerText = `Punkte: ${score}/${total}`;
         }
     }
 
@@ -79,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
             showQuestion();
         } else {
             currentQuestionIndex = 0;
-            loadQuestions(); // vollständiger Reload
+            loadQuestions(); // vollständiger Reload + Score reset
         }
     });
 
@@ -99,7 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 explanation: formData.get('explanation') || ""
             };
 
-            fetch('http://localhost:3000/api/questions', {
+            fetch('/api/questions', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -120,3 +139,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
     loadQuestions();
 });
+
